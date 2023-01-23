@@ -1616,10 +1616,6 @@ document.querySelector('#video').addEventListener('click',function()
   window.location.href='video.html';
 })
 
-document.querySelector('#explainer').addEventListener('click',function()
-{
-  window.location.href='explainer.html';
-})
 
 document.querySelector('#india').addEventListener('click',function()
 {
