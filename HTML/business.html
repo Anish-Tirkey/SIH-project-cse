@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
-    DNA India | Latest News, Live Breaking News on India, Politics, World,
-    Business, Sports, Bollywood
+    Latest News, Live Breaking News on India, Health , World,
+    Business, Sports, 
   </title>
-  <link rel="icon" href="https://cdn.dnaindia.com/sites/all/themes/dnaindia/favicon-1016.ico" />
+  <link rel="icon" href="\favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="/CSS/business.css" />
 </head>
@@ -21,9 +21,10 @@
         <div>
           <li>
             <a href="home.html" class="link">
-              <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/logodna.png" alt="" />
+              <img src="/ProjectLogo.jpg"
+              alt=""
+              style="width: 120%; height: 80px;" />
             </a>
-            <a href="https://www.dnaindia.com/hindi">हिंदी में पढ़ें</a>
           </li>
         </div>
       </div>
@@ -52,6 +53,7 @@
     <div>
       <a href="#" id="sliderText">National Herald case: Rahul Gandhi makes late night visit to hospital ahead of ED
         questioning</a>
+        <a href="liveevent.html" style="margin-right: 10%;">Live Event</a>
       <div id="carousel-btns">
         <a class="prev_carousel" href="#">
           <img src="https://english.cdn.zeenews.com/static/public/prev_carousel.svg" alt="Previous"></a>
@@ -61,35 +63,18 @@
         </a>
       </div>
     </div>
+    
   </div>
   <!-- panel below nav bar ends -->
   <div id="parentboxbelow">
     <!-- left side panel start here -->
     <div id="leftSidePanel">
       <div id="sidebox">
-        <div id="latestNews">
-          <div>
-            <img src="https://english.cdn.zeenews.com/static/public/icons/icons-latestnews.svg" alt="Error" />
-          </div>
-          <p>Latest News Section</p>
-        </div>
-        <div id="video">
-          <div>
-            <img src="https://english.cdn.zeenews.com/static/public/icons/icons-videos.svg" alt="Error" />
-          </div>
-          <p>Videos</p>
-        </div>
         <div id="india">
           <div>
             <img src="https://english.cdn.zeenews.com/static/public/icons/icons-india.svg" alt="Error" />
           </div>
           <p>India</p>
-        </div>
-        <div id="entertainment">
-          <div>
-            <img src="https://english.cdn.zeenews.com/static/public/icons/icons-entertainment.svg" alt="Error" />
-          </div>
-          <p>Entertainment</p>
         </div>
         <div id="sport">
           <div>
@@ -97,17 +82,12 @@
           </div>
           <p>Sports</p>
         </div>
-        <div id="viralNews">
-          <div>
-            <img src="https://english.cdn.zeenews.com/static/public/icons/icons-viralNews.svg" alt="Error" />
-          </div>
-          <p>Viral News</p>
-        </div>
-        <div id="lifeStyle">
+        <!--Change the logo for health-->
+        <div id="health">
           <div>
             <img src="https://english.cdn.zeenews.com/static/public/icons/icons-lifestyle.svg" alt="Error" />
           </div>
-          <p>Lifestyle</p>
+          <p>Health</p>
         </div>
         <div id="business">
           <div>
@@ -121,12 +101,6 @@
           </div>
           <p>World</p>
         </div>
-        <div id="ezmall">
-          <div>
-            <img src="https://english.cdn.zeenews.com/static/public/icons/ezmall-icon1.png" alt="Error" />
-          </div>
-          <p>Ezmall</p>
-        </div>
       </div>
     </div>
     <!-- left side panel end here -->
@@ -139,11 +113,11 @@
           <h4>PHOTOS</h4>
           <hr />
           <div id="slidingshow"></div>
-          <button><a href="photo.html">MORE PHOTOS</a></button>
+          <!-- <button><a href="photo.html">MORE PHOTOS</a></button> -->
           <!-- Bottom is for news after carosol -->
           <div id="bottom"></div>
         </div>
-        <button onclick="getUrl()">More News</button>
+        <!-- <button onclick="getUrl()">More News</button> -->
       </div>
     </div>
   </div>
@@ -154,7 +128,6 @@
           <ul class="nav">
             <li class="nav-item">
               <div class="dna-logo">
-                <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/logodna.png" alt="" />
               </div>
             </li>
 
@@ -167,79 +140,23 @@
             </li>
 
             <li id="nav-item">
-              <a href="business.html">BUISNESS</a>
+              <a href="business.html">BUSINESS</a>
             </li>
 
-            <li id="nav-item">
-              <a href="https://www.dnaindia.com/technology">TECHNOLOGY</a>
-            </li>
 
             <li id="nav-item">
               <a href="sports.html">SPORTS</a>
             </li>
 
             <li id="nav-item">
-              <a href="sports.html">CRICKET</a>
+              <a href="health.html">HEALTH</a>
             </li>
 
-            <li id="nav-item">
-              <a href="Entertainment.html">ENTERTAINMENT</a>
-            </li>
           </ul>
         </div>
       </div>
 
-      <div id="middle-footer-box">
-        <div>
-          <div>
-            <div class="left-text">
-              <p>FOLLOW US ON</p>
-
-              <ul class="middle-nav">
-                <li>
-                  <a href="https://www.facebook.com/dnaindia" target="_blank">
-                    <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/icon-facebook.svg" alt="" />
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://twitter.com/dna" target="_blank">
-                    <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/icon-twitter.svg" alt="" />
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://www.youtube.com/channel/UCIRAYFbJmrP--jyrC9MAIWQ/videos" target="_blank">
-                    <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/youtube-white.svg" alt="" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <ul class="nav">
-              <li id="nav-item">
-                <a href="https://www.dnaindia.com/about">ABOUT DNA</a>
-              </li>
-
-              <li id="nav-item">
-                <a href="https://www.dnaindia.com/contact">CONTACT US</a>
-              </li>
-
-              <li id="nav-item">
-                <a href="https://www.dnaindia.com/investors/index.html">INVESTORS</a>
-              </li>
-
-              <li id="nav-item">
-                <a href="https://www.dnaindia.com/advertise">ADVERTISE</a>
-              </li>
-
-              <li id="nav-item">
-                <a href="https://www.dnaindia.com/privacy-policy">PRIVACY-POLICY</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      
 
       <div id="footer-box">
         <div class="row">

@@ -5,12 +5,13 @@
   let topNewsTitleArray = [];
 
   let pageData = getUrl().articles;
+  // loadPageData();
   console.log(pageData)
 
-  function getUrl() {
+  function getUrl(pageNo = 1) {
     pageNo++;
     const http = new XMLHttpRequest();
-    http.open('get', `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f9e9555cc22e430ea83742248403265c&page=${pageNo}`, null);
+    http.open('get', `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d3087ba8e8f74cdb8ddb6a51f78c5a27&page=${pageNo}`, null);
     http.responseText = 'json';
     http.send(null);
     return JSON.parse(http.response);
@@ -18,8 +19,9 @@
 
   function loadPageData() {
     topNewsTitleArray = [];
-    pageData = getUrl().articles;
-    pageData.forEach((elem)=>{
+    let x  = getUrl(2).articles;
+    x.forEach((elem)=>{
+      if(elem.title)
       topNewsTitleArray.push(elem.title);
     })
   }
@@ -171,39 +173,21 @@
     let desc = document.createElement("h3");
     desc.innerText = elem.title;
     box.append(desc);
+    if(elem.urlToImage)
     document.querySelector("#top").append(box);
   });
-
+  let slideimg = [];
+  let slideimgdesc = [];
   bottarr.forEach(function (elem) {
-    let box = document.createElement("div");
-    box.setAttribute("id", box);
-    let Image = document.createElement("img");
-    if(elem.urlToImage)
-    Image.setAttribute("src", elem.urlToImage);
-    box.append(Image);
-    let desc = document.createElement("h3");
-    desc.innerText = elem.title;
-    box.append(desc);
-    document.querySelector("#bottom").append(box);
+    if(elem.urlToImage && elem.title)
+    {
+    slideimg.push(elem.urlToImage);
+    slideimgdesc.push(elem.title);
+    }
+
   });
 
-  let slideimg = [
-    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2227966-untitled-design-2022-06-10t135810.780.jpg",
-    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2227788-rashtrapati-bhavan-new.jpg",
-    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2214033-rs-polls.jpg",
-    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/08/2183816-new-project-32.jpg",
-    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/07/2156754-untitled-design-2022-06-06t231358.719.jpg",
-  ];
-
-  
-
-  let slideimgdesc = [
-    "In Pic: Indian Air Force's formidable fighter jet fleet: Sukhoi, Tejas, Migs and More",
-    "In pics: Rashtrapati Bhavan, spread over 2 lakh square feet awaits new President",
-    "Rajya Sabha Elections on June 10: All you need to know",
-    "Shocking photos of Delhi Metro parking fire: 90 vehicles gutted",
-    "In Pics: Check out the transport fleet of the Indian Air Force",
-  ];
+ 
   function slidingimage() {
     let i = 0;
     let j = 1;
@@ -220,6 +204,7 @@
         i = 0;
         j = 1;
       }
+
       image.src = slideimg[i];
       indi1.append(image);
       imagedesc.innerText = slideimgdesc[i];
@@ -241,32 +226,16 @@
 
   //Checked 
   // Side nav bar using for redirection to other pages.
-  document.querySelector('#latestNews').addEventListener('click', function () {
-    window.location.href = 'letestNews.html';
+  document.querySelector('#health').addEventListener('click', function () {
+    window.location.href = 'health.html';
   })
 
-  document.querySelector('#video').addEventListener('click', function () {
-    window.location.href = 'video.html';
-  })
 
   document.querySelector('#india').addEventListener('click', function () {
     window.location.href = 'india.html';
   })
-
-  document.querySelector('#entertainment').addEventListener('click', function () {
-    window.location.href = 'Entertainment.html';
-  })
-
   document.querySelector('#sport').addEventListener('click', function () {
     window.location.href = 'sports.html';
-  })
-
-  document.querySelector('#viralNews').addEventListener('click', function () {
-    window.location.href = 'viral.html';
-  })
-
-  document.querySelector('#lifeStyle').addEventListener('click', function () {
-    window.location.href = 'lifeStyle.html';
   })
 
   document.querySelector('#business').addEventListener('click', function () {
@@ -275,9 +244,4 @@
 
   document.querySelector('#world').addEventListener('click', function () {
     window.location.href = 'world.html';
-  })
-
-  document.querySelector('#ezmall').addEventListener('click', function () {
-    window.open('https://www.ezmall.com/?utm_source=Dnaindia.com&utm_medium=Affiliate&utm_campaign=Dnaindia.com_Traffic', '__blank');
-
   })

@@ -375,9 +375,10 @@
         margin-left: 20px;
       }
 
-      #world{
+      #health{
           background-color:#ffde2f ;
         }
+
       /* leftSidePanel css end here */
       /* rightMainNews css start here */
 
@@ -423,8 +424,6 @@
         padding: 10px;
         text-align: left;
         border-radius: 10px;
-        justify-content: flex-start;
-        
       }
 
       /* H1 HAS BEEN USED FOR PHOTO HEADING */
@@ -505,9 +504,6 @@
         margin: 5px;
         cursor: pointer;
       }
-      /* #slidingshow a:hover{
-        background-color: ;
-      } */
 
       #indi1 {
         display: block;
@@ -714,11 +710,11 @@
         <div>
           <div>
             <li>
-              <a href="home.html" class="link ">
+              <a href="home.html" class="link">
                 <img
-                  src="/ProjectLogo.jpg"
-                  alt=""
-                  style="width: 120%; height: 80px;"
+                src="/ProjectLogo.jpg"
+                alt=""
+                style="width: 120%; height: 80px;"
                 />
               </a>
             </li>
@@ -823,13 +819,14 @@
       <!-- left side panel end here -->
       <div id="rightMainNews">
         <div id="outerContainer">
-          <h1>WORLD</h1>
+          <h1>HEALTH</h1>
           <hr />
           <div id="container">
             <div id="top"></div>
             <h4>PHOTOS</h4>
             <hr />
             <div id="slidingshow"></div>
+            <!-- <button><a href="photo.html">MORE PHOTOS</a></button> -->
             <!-- Bottom is for news after carosol -->
             <div id="bottom"></div>
           </div>
@@ -863,16 +860,15 @@
                 <a href="sports.html">SPORTS</a>
               </li>
 
-
               <li id="nav-item">
-                <a href="health.html"
-                  >HEALTH</a
-                >
+                <a href="health.html">HEALTH</a>
               </li>
+
             </ul>
           </div>
         </div>
 
+        
 
         <div id="footer-box">
           <div class="row">
@@ -1053,6 +1049,7 @@ pauseButton.addEventListener('click',function(){
   // left side panel js end
 
   // mainrightcontent js start here
+  
   let pageNo = 0;
   let topNewsTitleArray = [];
 
@@ -1062,7 +1059,7 @@ pauseButton.addEventListener('click',function(){
   function getUrl() {
     pageNo++;
     const http = new XMLHttpRequest();
-    http.open('get', `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=d3087ba8e8f74cdb8ddb6a51f78c5a27&page=${pageNo}`, null);
+    http.open('get', `https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=d3087ba8e8f74cdb8ddb6a51f78c5a27&page=${pageNo}`, null);
     http.responseText = 'json';
     http.send(null);
     return JSON.parse(http.response);
@@ -1075,16 +1072,22 @@ pauseButton.addEventListener('click',function(){
       topNewsTitleArray.push(elem.title);
     })
   }
+// 
+  // let arrByID = homePageData.filter(filterByID);
 
+  // function filterByID(item) {
+  //   if (item.category == "sports") {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
   let toparr = [];
   let bottarr = [];
-  console.log(pageData)
   let totSize = pageData.length;
-  for (let i = 0; i < totSize /2; i++) {
+  for (let i = 0; i < totSize/2; i++) {
     toparr.push(pageData[i]);
   }
-
-  // for slider in the bottom 
   for (let j = totSize/2; j < totSize; j++) {
     bottarr.push(pageData[j]);
   }
@@ -1102,16 +1105,18 @@ pauseButton.addEventListener('click',function(){
     if(elem.urlToImage)
     document.querySelector("#top").append(box);
   });
-
-
   let slideimg = [];
   let slideimgdesc = [];
+  
   bottarr.forEach(function (elem) {
     if(elem.urlToImage && elem.title) {
     slideimg.push(elem.urlToImage);
     slideimgdesc.push(elem.title);
     }
   });
+
+  console.log(bottarr);
+
   function slidingimage() {
     let i = 0;
     let j = 1;
@@ -1145,6 +1150,7 @@ pauseButton.addEventListener('click',function(){
   slidingimage();
 
   // mainrightcontent js end here
+
   //Sidebar Redirect Js
 
 document.querySelector('#india').addEventListener('click',function()
@@ -1152,16 +1158,17 @@ document.querySelector('#india').addEventListener('click',function()
   window.location.href='india.html';
 })
 
-document.querySelector('#health').addEventListener('click',function()
-{
-  window.location.href='health.html';
-})
 
 document.querySelector('#sport').addEventListener('click',function()
 {
   window.location.href='sports.html';
 })
 
+
+document.querySelector('#health').addEventListener('click',function()
+{
+  window.location.href='health.html';
+})
 
 document.querySelector('#business').addEventListener('click',function()
 {

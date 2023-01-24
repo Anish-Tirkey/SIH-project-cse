@@ -301,7 +301,8 @@ li > :nth-child(2):hover {
 #leftSidePanel {
   width: 25%;
   height: 600px;
-  align-items: left;
+  align-items: flex-start;
+  margin-top: 10%;
 }
 
 #sidebox > div {
